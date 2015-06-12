@@ -7,7 +7,7 @@ using IBatisIDAL;
 
 namespace IBatisBLL
 {
-    public class StudentService : BaseService<IStudentDao>, IStudentService
+    public class StudentService : ServiceBase<IStudentDao>, IStudentService
     {
         private static readonly StudentService _instance = new StudentService();
         private StudentService() : base(DALContextEnum.DefaultDAL) { }

@@ -17,7 +17,7 @@ using IBatisNet.DataAccess.SessionStore;
 
 namespace IBatisDAL
 {
-    public class BaseDao : IDao
+    public class DaoBase : IDao
     {
         protected const int PAGE_SIZE = 4;
 

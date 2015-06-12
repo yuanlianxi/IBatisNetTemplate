@@ -7,7 +7,7 @@ using IBatisIDAL;
 
 namespace IBatisDAL
 {
-    public class TaskWarningLogDao : BaseDao, ITaskWarningLogDao
+    public class TaskWarningLogDao : DaoBase, ITaskWarningLogDao
     {
         public int Insert(TaskWarningLog log)
         {

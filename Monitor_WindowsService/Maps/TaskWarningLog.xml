@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="TaskWarningLog" type="IBatisEntity.TaskWarningLog, IBatisEntity" />
+  </alias>
+	<statements>
+    <select id="TaskWarningLog-Insert" parameterClass="TaskWarningLog" resultClass="string">
+      INSERT  into TaskWarningLog (
+      TaskId
+      ,WarnInfo
+      ,CreateDateTime
+      ,IsActive)
+      output inserted.Id
+      VALUES(
+      #TaskId#
+      ,#WarnInfo#
+      ,#CreateDateTime#
+      ,#IsActive#
+      )
+    </select>
+	</statements>
+
+</sqlMap>
+

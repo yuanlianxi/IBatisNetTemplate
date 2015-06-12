@@ -7,7 +7,7 @@ using IBatisIDAL;
 
 namespace IBatisDAL
 {
-    public class TaskValueLimitsDao : BaseDao, ITaskValueLimitsDao
+    public class TaskValueLimitsDao : DaoBase, ITaskValueLimitsDao
     {
         public int Insert(TaskValueLimits taskValueLimits)
         {

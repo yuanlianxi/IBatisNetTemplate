@@ -8,7 +8,7 @@ using ApplicationCommon;
 
 namespace IBatisDAL
 {
-    public class TaskExecutionCheckLogDao : BaseDao, ITaskExecutionCheckLogDao
+    public class TaskExecutionCheckLogDao : DaoBase, ITaskExecutionCheckLogDao
     {
 
         public int Insert(TaskExecutionCheckLog log)

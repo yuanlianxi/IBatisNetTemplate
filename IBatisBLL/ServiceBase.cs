@@ -10,7 +10,7 @@ using IBatisBLL;
 
 namespace IBatisBLL
 {
-    public class BaseService<T> where T : class
+    public class ServiceBase<T> where T : class
     {
         protected enum DALContextEnum 
         { 
@@ -40,7 +40,7 @@ namespace IBatisBLL
         /// <summary>
         /// 构造器
         /// </summary>
-        protected BaseService(DALContextEnum sqlMapContextEnum)
+        protected ServiceBase(DALContextEnum sqlMapContextEnum)
         {
             try
             {

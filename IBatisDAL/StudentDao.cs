@@ -6,7 +6,7 @@ using IBatisIDAL;
 
 namespace IBatisDAL
 {
-    public class StudentDao:BaseDao,IStudentDao
+    public class StudentDao:DaoBase,IStudentDao
     {
 
         public IBatisEntity.Student Select(string stuNum)

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="TaskExecutionCheckLog" type="IBatisEntity.TaskExecutionCheckLog, IBatisEntity" />
+  </alias>
+	<statements>
+		<select id="TaskExecutionCheckLog-Select" parameterClass="string" resultClass="TaskExecutionCheckLog">
+      SELECT * FROM Student WHERE StuNum=#StuNum#
+    </select>
+    <select id="TaskExecutionCheckLog-Insert" parameterClass="TaskExecutionCheckLog" resultClass="string">
+      INSERT  into Student (
+      TaskTotalCount
+      ,TaskValidCount
+      ,AcquisitionDateTime
+      ,IsActive
+      ,CreateDateTime  )
+      output inserted.Id
+      VALUES(
+      #TaskTotalCount#
+      ,#TaskValidCount#
+      ,#AcquisitionDateTime#
+      ,#IsActive#
+      ,#CreateDateTime#
+      )
+    </select>
+	
+</statements>
+
+</sqlMap>
+

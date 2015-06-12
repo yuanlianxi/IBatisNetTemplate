@@ -8,7 +8,7 @@ using IBatisIBLL;
 
 namespace IBatisBLL
 {
-    public class TaskExecutionCheckLogService : BaseService<ITaskExecutionCheckLogDao>, ITaskExecutionCheckLogService
+    public class TaskExecutionCheckLogService : ServiceBase<ITaskExecutionCheckLogDao>, ITaskExecutionCheckLogService
     {
         private TaskExecutionCheckLogService() : base(DALContextEnum.DefaultDAL) { }
         private static readonly TaskExecutionCheckLogService _instance = new TaskExecutionCheckLogService();

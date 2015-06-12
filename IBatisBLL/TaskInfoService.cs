@@ -8,7 +8,7 @@ using IBatisIBLL;
 
 namespace IBatisBLL
 {
-    public class TaskInfoService : BaseService<ITaskInfoDao>, ITaskInfoService
+    public class TaskInfoService : ServiceBase<ITaskInfoDao>, ITaskInfoService
     {
 
         private TaskInfoService() : base(DALContextEnum.DefaultDAL) { }

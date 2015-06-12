@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="Student" type="IBatisEntity.Student, IBatisEntity" />
+  </alias>
+	<statements>
+		<select id="Student-Select" parameterClass="string" resultClass="Student">
+      SELECT * FROM Student WHERE StuNum=#StuNum#
+    </select>
+		<insert id="Student-Insert" parameterClass="Student" resultClass="string">
+      INSERT  into Student (
+      [StuNum]
+      ,[StuName]
+      ,[StuGender]
+      ,[StuAge]
+      ,[StuPhoto]
+      ,[StuSchoolStartDate]
+      ,[StuPassword])
+      output inserted.StuNum
+      VALUES(
+      #StuNum#
+      ,#StuName#
+      ,#StuGender#
+      ,#StuAge#
+      ,#StuPhoto#
+      ,#StuSchoolStartDate#
+      ,#StuPassword#
+      )
+    </insert>
+	</statements>
+
+</sqlMap>
+

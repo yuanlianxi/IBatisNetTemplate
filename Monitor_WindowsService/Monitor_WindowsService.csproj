@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B40E59D6-AA88-481A-8A12-94BD2DDD395D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Monitor_WindowsService</RootNamespace>
+    <AssemblyName>Monitor_WindowsService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\SqlTaskHelper.cs" />
+    <Compile Include="AppCode\WebServicePool.cs" />
+    <Compile Include="AppCode\WebServiceTaskHelper.cs" />
+    <Compile Include="AppCode\HttpLinkTaskHelper.cs" />
+    <Compile Include="Tasks\HttpLinkTask.cs" />
+    <Compile Include="Monitor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Monitor.Designer.cs">
+      <DependentUpon>Monitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\SqlTask.cs" />
+    <Compile Include="Tasks\TaskBase.cs" />
+    <Compile Include="Tasks\TaskManager.cs" />
+    <Compile Include="Tasks\WebServiceTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Maps\Student.xml" />
+    <Content Include="Maps\TaskAcquisitionLog.xml" />
+    <Content Include="Maps\TaskExecutionCheckLog.xml" />
+    <Content Include="Maps\TaskExecutionResultLog.xml" />
+    <Content Include="Maps\TaskInfo.xml" />
+    <Content Include="Maps\TaskValueLimits.xml" />
+    <Content Include="Maps\TaskWarningLog.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dao.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="providers.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationCommon\ApplicationCommon.csproj">
+      <Project>{ED2BD1AE-8ADA-44ED-8331-78DC491F522D}</Project>
+      <Name>ApplicationCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBatisBLL\IBatisBLL.csproj">
+      <Project>{BDD44827-0261-420F-9B29-97E81D381071}</Project>
+      <Name>IBatisBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBatisEntity\IBatisEntity.csproj">
+      <Project>{09B246CA-3F1D-4A94-877B-37834501B6C8}</Project>
+      <Name>IBatisEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBatisIBLL\IBatisIBLL.csproj">
+      <Project>{22AAB7E2-DD23-4224-9CA5-8FAF052CB134}</Project>
+      <Name>IBatisIBLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

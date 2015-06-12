@@ -6,3 +6,7 @@ D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEnt
 D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEntity.pdb
 D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.dll
 D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.pdb
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEntity.dll
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEntity.pdb
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.dll
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.pdb

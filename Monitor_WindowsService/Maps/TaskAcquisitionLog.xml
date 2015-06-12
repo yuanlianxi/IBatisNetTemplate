@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="TaskAcquisitionLog" type="IBatisEntity.TaskAcquisitionLog, IBatisEntity" />
+  </alias>
+	<statements>
+		<select id="TaskAcquisitionLog-Select" parameterClass="string" resultClass="TaskAcquisitionLog">
+      SELECT * FROM Student WHERE StuNum=#StuNum#
+    </select>
+    <select id="TaskAcquisitionLog-Insert" parameterClass="TaskAcquisitionLog" resultClass="string">
+      INSERT  into Student (
+      [StuNum]
+      ,[StuName]
+      ,[StuGender]
+      ,[StuAge]
+      ,[StuPhoto]
+      ,[StuSchoolStartDate]
+      ,[StuPassword])
+      output inserted.StuNum
+      VALUES(
+      #StuNum#
+      ,#StuName#
+      ,#StuGender#
+      ,#StuAge#
+      ,#StuPhoto#
+      ,#StuSchoolStartDate#
+      ,#StuPassword#
+      )
+    </select>
+	</statements>
+
+</sqlMap>
+

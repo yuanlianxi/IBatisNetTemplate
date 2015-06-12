@@ -9,7 +9,7 @@ using ApplicationCommon;
 
 namespace IBatisDAL
 {
-    public class TaskAcquisitionLogDao:BaseDao, ITaskAcquisitionLogDao
+    public class TaskAcquisitionLogDao:DaoBase, ITaskAcquisitionLogDao
     {
 
         public int Insert(TaskAcquisitionLog log)

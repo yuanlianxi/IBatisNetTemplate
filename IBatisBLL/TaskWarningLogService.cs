@@ -8,7 +8,7 @@ using IBatisIBLL;
 
 namespace IBatisBLL
 {
-    public class TaskWarningLogService : BaseService<ITaskWarningLogDao>,ITaskWarningLogService
+    public class TaskWarningLogService : ServiceBase<ITaskWarningLogDao>,ITaskWarningLogService
     {
         private  TaskWarningLogService():base(DALContextEnum.DefaultDAL){}
         private static readonly TaskWarningLogService _instance = new TaskWarningLogService();

@@ -11,7 +11,7 @@ using IBatisIDAL;
 
 namespace IBatisBLL
 {
-    public class TaskValueLimitsService : BaseService<ITaskValueLimitsDao>,ITaskValueLimitsService 
+    public class TaskValueLimitsService : ServiceBase<ITaskValueLimitsDao>,ITaskValueLimitsService 
     {
         private TaskValueLimitsService() : base(DALContextEnum.DefaultDAL) { }
         private static readonly TaskValueLimitsService _instance = new TaskValueLimitsService();

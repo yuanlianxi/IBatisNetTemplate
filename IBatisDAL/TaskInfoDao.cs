@@ -8,7 +8,7 @@ using ApplicationCommon;
 
 namespace IBatisDAL
 {
-    public class TaskInfoDao : BaseDao, ITaskInfoDao
+    public class TaskInfoDao : DaoBase, ITaskInfoDao
     {
         public int Insert(TaskInfo taskInfo)
         {
