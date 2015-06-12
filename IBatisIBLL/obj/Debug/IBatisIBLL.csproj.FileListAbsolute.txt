@@ -1,0 +1,14 @@
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisIBLL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisIBLL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisEntity.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisEntity.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisIBLL\obj\Debug\IBatisIBLL.csprojResolveAssemblyReference.cache
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisIBLL\obj\Debug\IBatisIBLL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisIBLL\obj\Debug\IBatisIBLL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisIBLL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisIBLL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisEntity.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisIBLL\bin\Debug\IBatisEntity.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisIBLL\obj\Debug\IBatisIBLL.csprojResolveAssemblyReference.cache
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisIBLL\obj\Debug\IBatisIBLL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisIBLL\obj\Debug\IBatisIBLL.pdb

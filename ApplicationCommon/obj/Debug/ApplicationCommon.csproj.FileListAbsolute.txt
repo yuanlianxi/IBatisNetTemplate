@@ -1,0 +1,4 @@
+D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.dll
+D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.dll
+D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.pdb

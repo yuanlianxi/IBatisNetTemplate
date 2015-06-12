@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="TaskValueLimits" type="IBatisEntity.TaskValueLimits, IBatisEntity" />
+  </alias>
+	<statements>
+		<select id="TaskValueLimits-Select" parameterClass="string" resultClass="TaskValueLimits">
+      SELECT * FROM Student WHERE StuNum=#StuNum#
+    </select>
+    <select id="TaskValueLimits-Insert" parameterClass="TaskValueLimits" resultClass="string">
+      INSERT  into Student (
+      TaskId
+      ,LimitType
+      ,ValueType
+      ,LimitValues
+      ,CreateDateTime
+      ,LastUpdateDateTime
+      ,IsActive   )
+      output inserted.Id
+      VALUES(
+      #TaskId#
+      ,#LimitType#
+      ,#ValueType#
+      ,#LimitValues#
+      ,#CreateDateTime#
+      ,#LastUpdateDateTime#
+      ,#IsActive#
+      )
+    </select>
+	</statements>
+
+</sqlMap>
+

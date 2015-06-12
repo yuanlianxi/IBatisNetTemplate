@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{8190AA10-04B1-4335-9FBE-12C060ADD69E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisDAL", "IBatisDAL\IBatisDAL.csproj", "{1FABE6F9-6D38-447C-9577-D81DA7DCCB10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisIDAL", "IBatisIDAL\IBatisIDAL.csproj", "{D81E69DC-10CC-4B45-A5C3-D3A3280B5CFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisIBLL", "IBatisIBLL\IBatisIBLL.csproj", "{22AAB7E2-DD23-4224-9CA5-8FAF052CB134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisBLL", "IBatisBLL\IBatisBLL.csproj", "{BDD44827-0261-420F-9B29-97E81D381071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisEntity", "IBatisEntity\IBatisEntity.csproj", "{09B246CA-3F1D-4A94-877B-37834501B6C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalLib", "ExternalLib", "{0AF5555C-2054-4120-9B8E-5E7A3B7D8371}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ibatis2.0", "Ibatis2.0", "{D198D061-161A-42EA-90F1-5C5945510802}"
+	ProjectSection(SolutionItems) = preProject
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\Castle.DynamicProxy.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\Castle.DynamicProxy.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\IBatisNet.Common.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\IBatisNet.Common.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\IBatisNet.DataAccess.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\IBatisNet.DataAccess.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\IBatisNet.DataMapper.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 2.0\IBatisNet.DataMapper.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ibatis4.0", "Ibatis4.0", "{803C8179-FAED-4B62-BE05-A69A553B814C}"
+	ProjectSection(SolutionItems) = preProject
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.Core.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.Core.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.Core.pdb = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.Core.pdb
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.Core.xml = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.Core.xml
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.DynamicProxy.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\Castle.DynamicProxy.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.Logging.Log4Net.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.Logging.Log4Net.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.pdb = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.pdb
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.xml = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.Common.xml
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataAccess.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataAccess.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataAccess.pdb = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataAccess.pdb
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataMapper.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataMapper.dll
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataMapper.pdb = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataMapper.pdb
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataMapper.xml = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\IBatisNet.DataMapper.xml
+		E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\log4net.dll = E:\软件安装包\web开发常用库和软件和资源\.Net C#库\Ibatis\Ibatis 4.0\log4net.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{06CBDD56-CBCC-4893-AA3D-E891B4B98275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCommon", "ApplicationCommon\ApplicationCommon.csproj", "{ED2BD1AE-8ADA-44ED-8331-78DC491F522D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8190AA10-04B1-4335-9FBE-12C060ADD69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8190AA10-04B1-4335-9FBE-12C060ADD69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8190AA10-04B1-4335-9FBE-12C060ADD69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8190AA10-04B1-4335-9FBE-12C060ADD69E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FABE6F9-6D38-447C-9577-D81DA7DCCB10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FABE6F9-6D38-447C-9577-D81DA7DCCB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FABE6F9-6D38-447C-9577-D81DA7DCCB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FABE6F9-6D38-447C-9577-D81DA7DCCB10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81E69DC-10CC-4B45-A5C3-D3A3280B5CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81E69DC-10CC-4B45-A5C3-D3A3280B5CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81E69DC-10CC-4B45-A5C3-D3A3280B5CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81E69DC-10CC-4B45-A5C3-D3A3280B5CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22AAB7E2-DD23-4224-9CA5-8FAF052CB134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22AAB7E2-DD23-4224-9CA5-8FAF052CB134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22AAB7E2-DD23-4224-9CA5-8FAF052CB134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22AAB7E2-DD23-4224-9CA5-8FAF052CB134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD44827-0261-420F-9B29-97E81D381071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD44827-0261-420F-9B29-97E81D381071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD44827-0261-420F-9B29-97E81D381071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD44827-0261-420F-9B29-97E81D381071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B246CA-3F1D-4A94-877B-37834501B6C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B246CA-3F1D-4A94-877B-37834501B6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B246CA-3F1D-4A94-877B-37834501B6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B246CA-3F1D-4A94-877B-37834501B6C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CBDD56-CBCC-4893-AA3D-E891B4B98275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CBDD56-CBCC-4893-AA3D-E891B4B98275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CBDD56-CBCC-4893-AA3D-E891B4B98275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CBDD56-CBCC-4893-AA3D-E891B4B98275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2BD1AE-8ADA-44ED-8331-78DC491F522D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2BD1AE-8ADA-44ED-8331-78DC491F522D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2BD1AE-8ADA-44ED-8331-78DC491F522D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2BD1AE-8ADA-44ED-8331-78DC491F522D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D198D061-161A-42EA-90F1-5C5945510802} = {0AF5555C-2054-4120-9B8E-5E7A3B7D8371}
+		{803C8179-FAED-4B62-BE05-A69A553B814C} = {0AF5555C-2054-4120-9B8E-5E7A3B7D8371}
+	EndGlobalSection
+EndGlobal

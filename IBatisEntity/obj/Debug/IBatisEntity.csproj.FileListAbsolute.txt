@@ -1,0 +1,8 @@
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEntity.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEntity.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEntity.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\bin\Debug\IBatisEntity.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisEntity\obj\Debug\IBatisEntity.pdb

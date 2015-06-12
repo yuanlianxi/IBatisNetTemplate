@@ -1,0 +1,20 @@
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisDAL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisDAL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisEntity.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisIDAL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisNet.Common.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisNet.DataAccess.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisNet.DataMapper.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\Castle.DynamicProxy.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisEntity.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\bin\Debug\IBatisIDAL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\obj\Debug\IBatisDAL.csprojResolveAssemblyReference.cache
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisDAL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisDAL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\obj\Debug\IBatisDAL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisDAL\obj\Debug\IBatisDAL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisDAL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisDAL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisDAL\obj\Debug\IBatisDAL.csprojResolveAssemblyReference.cache
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisDAL\obj\Debug\IBatisDAL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisDAL\obj\Debug\IBatisDAL.pdb

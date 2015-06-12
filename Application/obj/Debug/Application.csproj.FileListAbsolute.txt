@@ -1,0 +1,48 @@
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\Application.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\Application.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisBLL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisEntity.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisIBLL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisIDAL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.DataAccess.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.Common.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\Castle.DynamicProxy.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.DataMapper.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisBLL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisEntity.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisIBLL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisIDAL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.DataAccess.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.DataAccess.xml
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.Common.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.Common.xml
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\Castle.DynamicProxy.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.DataMapper.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\bin\IBatisNet.DataMapper.xml
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\obj\Debug\Application.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\Application\obj\Debug\Application.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\Application.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\Application.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisBLL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisEntity.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisIBLL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisIDAL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.DataAccess.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.Common.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\Castle.DynamicProxy.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.DataMapper.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisBLL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisEntity.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisIBLL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisIDAL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.DataAccess.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.DataAccess.xml
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.Common.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.Common.xml
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\Castle.DynamicProxy.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.DataMapper.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\Application\bin\IBatisNet.DataMapper.xml
+D:\develop tools\常用工具\IBatisNetTemplate\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
+D:\develop tools\常用工具\IBatisNetTemplate\Application\obj\Debug\Application.dll
+D:\develop tools\常用工具\IBatisNetTemplate\Application\obj\Debug\Application.pdb

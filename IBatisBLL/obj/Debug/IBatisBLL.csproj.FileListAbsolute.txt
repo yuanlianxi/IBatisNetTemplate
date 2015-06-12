@@ -1,0 +1,44 @@
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\obj\Debug\IBatisBLL.csprojResolveAssemblyReference.cache
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisBLL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisBLL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\Castle.DynamicProxy.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisEntity.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIBLL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIDAL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.Common.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataAccess.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataMapper.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisEntity.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIBLL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIDAL.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\Castle.DynamicProxy.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.Common.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.Common.xml
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataAccess.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataAccess.xml
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataMapper.pdb
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataMapper.xml
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\obj\Debug\IBatisBLL.dll
+c:\users\yuan\documents\visual studio 2010\Projects\IBatisNetTemplate\IBatisBLL\obj\Debug\IBatisBLL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisBLL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisBLL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\Castle.DynamicProxy.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisEntity.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIBLL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIDAL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.Common.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataAccess.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataMapper.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisEntity.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIBLL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisIDAL.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\Castle.DynamicProxy.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.Common.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.Common.xml
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataAccess.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataAccess.xml
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataMapper.pdb
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\bin\Debug\IBatisNet.DataMapper.xml
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\obj\Debug\IBatisBLL.csprojResolveAssemblyReference.cache
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\obj\Debug\IBatisBLL.dll
+D:\develop tools\常用工具\IBatisNetTemplate\IBatisBLL\obj\Debug\IBatisBLL.pdb

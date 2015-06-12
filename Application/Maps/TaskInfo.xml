@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="TaskInfo" type="IBatisEntity.TaskInfo, IBatisEntity" />
+	</alias>
+	<statements>
+		<select id="TaskInfo-Select" parameterClass="string" resultClass="TaskInfo">
+      SELECT * FROM TaskInfo WHERE IsActive=1
+    </select>
+    <select id="TaskInfo-SelectTotalCount" parameterClass="bool" resultClass="int">
+      SELECT COUNT(1) FROM TaskInfo WHERE IsActive=#IsActive#
+    </select>
+    <select id="TaskInfo-Insert" parameterClass="TaskInfo" resultClass="string">
+      INSERT  into TaskInfo (
+      Method
+      ,Content
+      ,Extend
+      ,CreateDateTime
+      ,LastUpdateDateTime
+      ,IsActive)
+      output inserted.Id
+      VALUES(
+      #Method#
+      ,#Content#
+      ,#Extend#
+      ,#CreateDateTime#
+      ,#LastUpdateDateTime#
+      ,#IsActive#
+      )
+    </select>
+	</statements>
+
+</sqlMap>

@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StudentManageModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="StudentManageModelStoreContainer">
+          <EntitySet Name="Course" EntityType="StudentManageModel.Store.Course" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CourseSelect" EntityType="StudentManageModel.Store.CourseSelect" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CourseTeach" EntityType="StudentManageModel.Store.CourseTeach" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Manager" EntityType="StudentManageModel.Store.Manager" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Student" EntityType="StudentManageModel.Store.Student" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Teacher" EntityType="StudentManageModel.Store.Teacher" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__CourseSel__StuNu__23BE4960" Association="StudentManageModel.Store.FK__CourseSel__StuNu__23BE4960">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="CourseSelect" EntitySet="CourseSelect" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CourseTea__TeaNu__1FEDB87C" Association="StudentManageModel.Store.FK__CourseTea__TeaNu__1FEDB87C">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="CourseTeach" EntitySet="CourseTeach" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSelect_CourseTeach" Association="StudentManageModel.Store.FK_CourseSelect_CourseTeach">
+            <End Role="CourseTeach" EntitySet="CourseTeach" />
+            <End Role="CourseSelect" EntitySet="CourseSelect" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CrsNum" />
+          </Key>
+          <Property Name="CrsNum" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="CrsName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CrsType" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CourseSelect">
+          <Key>
+            <PropertyRef Name="StuNum" />
+            <PropertyRef Name="CrsNum" />
+            <PropertyRef Name="SchoolYear" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="StuNum" Type="nchar" Nullable="false" MaxLength="12" />
+          <Property Name="TeaNum" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="CrsNum" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="SchoolYear" Type="datetime" Nullable="false" />
+          <Property Name="Semester" Type="int" Nullable="false" />
+          <Property Name="Grade" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Selecting" Type="bit" />
+        </EntityType>
+        <EntityType Name="CourseTeach">
+          <Key>
+            <PropertyRef Name="TeaNum" />
+            <PropertyRef Name="CrsNum" />
+            <PropertyRef Name="SchoolYear" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="TeaNum" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="CrsNum" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="SchoolYear" Type="datetime" Nullable="false" />
+          <Property Name="Semester" Type="int" Nullable="false" />
+          <Property Name="Classes" Type="int" />
+          <Property Name="SelectedCount" Type="int" />
+          <Property Name="SelectedCountMax" Type="int" />
+          <Property Name="Start" Type="bit" />
+          <Property Name="Selecting" Type="bit" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserPassword" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StuNum" />
+          </Key>
+          <Property Name="StuNum" Type="nchar" Nullable="false" MaxLength="12" />
+          <Property Name="StuName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StuGender" Type="nchar" Nullable="false" MaxLength="1" />
+          <Property Name="StuAge" Type="int" Nullable="false" />
+          <Property Name="StuPhoto" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StuSchoolStartDate" Type="datetime" />
+          <Property Name="StuPassword" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="TeaNum" />
+          </Key>
+          <Property Name="TeaNum" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="TeaName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TeaGender" Type="nchar" Nullable="false" MaxLength="1" />
+          <Property Name="TeaAge" Type="int" Nullable="false" />
+          <Property Name="TeaPhoto" Type="nvarchar(max)" />
+          <Property Name="TeaWorkYear" Type="datetime" />
+          <Property Name="TeaPassword" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__CourseSel__StuNu__23BE4960">
+          <End Role="Student" Type="StudentManageModel.Store.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CourseSelect" Type="StudentManageModel.Store.CourseSelect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StuNum" />
+            </Principal>
+            <Dependent Role="CourseSelect">
+              <PropertyRef Name="StuNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CourseTea__TeaNu__1FEDB87C">
+          <End Role="Teacher" Type="StudentManageModel.Store.Teacher" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CourseTeach" Type="StudentManageModel.Store.CourseTeach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaNum" />
+            </Principal>
+            <Dependent Role="CourseTeach">
+              <PropertyRef Name="TeaNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSelect_CourseTeach">
+          <End Role="CourseTeach" Type="StudentManageModel.Store.CourseTeach" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CourseSelect" Type="StudentManageModel.Store.CourseSelect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseTeach">
+              <PropertyRef Name="TeaNum" />
+              <PropertyRef Name="CrsNum" />
+              <PropertyRef Name="SchoolYear" />
+              <PropertyRef Name="Semester" />
+            </Principal>
+            <Dependent Role="CourseSelect">
+              <PropertyRef Name="TeaNum" />
+              <PropertyRef Name="CrsNum" />
+              <PropertyRef Name="SchoolYear" />
+              <PropertyRef Name="Semester" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudentManageModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="StudentManageEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Course" EntityType="StudentManageModel.Course" />
+          <EntitySet Name="CourseSelect" EntityType="StudentManageModel.CourseSelect" />
+          <EntitySet Name="CourseTeach" EntityType="StudentManageModel.CourseTeach" />
+          <EntitySet Name="Manager" EntityType="StudentManageModel.Manager" />
+          <EntitySet Name="Student" EntityType="StudentManageModel.Student" />
+          <EntitySet Name="Teacher" EntityType="StudentManageModel.Teacher" />
+          <AssociationSet Name="FK__CourseSel__StuNu__23BE4960" Association="StudentManageModel.FK__CourseSel__StuNu__23BE4960">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="CourseSelect" EntitySet="CourseSelect" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSelect_CourseTeach" Association="StudentManageModel.FK_CourseSelect_CourseTeach">
+            <End Role="CourseTeach" EntitySet="CourseTeach" />
+            <End Role="CourseSelect" EntitySet="CourseSelect" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CourseTea__TeaNu__1FEDB87C" Association="StudentManageModel.FK__CourseTea__TeaNu__1FEDB87C">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="CourseTeach" EntitySet="CourseTeach" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CrsNum" />
+          </Key>
+          <Property Name="CrsNum" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="CrsName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CrsType" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CourseSelect">
+          <Key>
+            <PropertyRef Name="StuNum" />
+            <PropertyRef Name="CrsNum" />
+            <PropertyRef Name="SchoolYear" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="StuNum" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="true" />
+          <Property Name="TeaNum" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="CrsNum" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="SchoolYear" Type="DateTime" Nullable="false" />
+          <Property Name="Semester" Type="Int32" Nullable="false" />
+          <Property Name="Grade" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Selecting" Type="Boolean" />
+          <NavigationProperty Name="Student" Relationship="StudentManageModel.FK__CourseSel__StuNu__23BE4960" FromRole="CourseSelect" ToRole="Student" />
+          <NavigationProperty Name="CourseTeach" Relationship="StudentManageModel.FK_CourseSelect_CourseTeach" FromRole="CourseSelect" ToRole="CourseTeach" />
+        </EntityType>
+        <EntityType Name="CourseTeach">
+          <Key>
+            <PropertyRef Name="TeaNum" />
+            <PropertyRef Name="CrsNum" />
+            <PropertyRef Name="SchoolYear" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="TeaNum" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="CrsNum" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="SchoolYear" Type="DateTime" Nullable="false" />
+          <Property Name="Semester" Type="Int32" Nullable="false" />
+          <Property Name="Classes" Type="Int32" />
+          <Property Name="SelectedCount" Type="Int32" />
+          <Property Name="SelectedCountMax" Type="Int32" />
+          <Property Name="Start" Type="Boolean" />
+          <Property Name="Selecting" Type="Boolean" />
+          <NavigationProperty Name="CourseSelect" Relationship="StudentManageModel.FK_CourseSelect_CourseTeach" FromRole="CourseTeach" ToRole="CourseSelect" />
+          <NavigationProperty Name="Teacher" Relationship="StudentManageModel.FK__CourseTea__TeaNu__1FEDB87C" FromRole="CourseTeach" ToRole="Teacher" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StuNum" />
+          </Key>
+          <Property Name="StuNum" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="true" />
+          <Property Name="StuName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StuGender" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
+          <Property Name="StuAge" Type="Int32" Nullable="false" />
+          <Property Name="StuPhoto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StuSchoolStartDate" Type="DateTime" />
+          <Property Name="StuPassword" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CourseSelect" Relationship="StudentManageModel.FK__CourseSel__StuNu__23BE4960" FromRole="Student" ToRole="CourseSelect" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="TeaNum" />
+          </Key>
+          <Property Name="TeaNum" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="TeaName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TeaGender" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
+          <Property Name="TeaAge" Type="Int32" Nullable="false" />
+          <Property Name="TeaPhoto" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TeaWorkYear" Type="DateTime" />
+          <Property Name="TeaPassword" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CourseTeach" Relationship="StudentManageModel.FK__CourseTea__TeaNu__1FEDB87C" FromRole="Teacher" ToRole="CourseTeach" />
+        </EntityType>
+        <Association Name="FK__CourseSel__StuNu__23BE4960">
+          <End Role="Student" Type="StudentManageModel.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CourseSelect" Type="StudentManageModel.CourseSelect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StuNum" />
+            </Principal>
+            <Dependent Role="CourseSelect">
+              <PropertyRef Name="StuNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSelect_CourseTeach">
+          <End Role="CourseTeach" Type="StudentManageModel.CourseTeach" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CourseSelect" Type="StudentManageModel.CourseSelect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseTeach">
+              <PropertyRef Name="TeaNum" />
+              <PropertyRef Name="CrsNum" />
+              <PropertyRef Name="SchoolYear" />
+              <PropertyRef Name="Semester" />
+            </Principal>
+            <Dependent Role="CourseSelect">
+              <PropertyRef Name="TeaNum" />
+              <PropertyRef Name="CrsNum" />
+              <PropertyRef Name="SchoolYear" />
+              <PropertyRef Name="Semester" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CourseTea__TeaNu__1FEDB87C">
+          <End Role="Teacher" Type="StudentManageModel.Teacher" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CourseTeach" Type="StudentManageModel.CourseTeach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaNum" />
+            </Principal>
+            <Dependent Role="CourseTeach">
+              <PropertyRef Name="TeaNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StudentManageModelStoreContainer" CdmEntityContainer="StudentManageEntities">
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="StudentManageModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CrsNum" ColumnName="CrsNum" />
+                <ScalarProperty Name="CrsName" ColumnName="CrsName" />
+                <ScalarProperty Name="CrsType" ColumnName="CrsType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseSelect">
+            <EntityTypeMapping TypeName="StudentManageModel.CourseSelect">
+              <MappingFragment StoreEntitySet="CourseSelect">
+                <ScalarProperty Name="StuNum" ColumnName="StuNum" />
+                <ScalarProperty Name="TeaNum" ColumnName="TeaNum" />
+                <ScalarProperty Name="CrsNum" ColumnName="CrsNum" />
+                <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Selecting" ColumnName="Selecting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseTeach">
+            <EntityTypeMapping TypeName="StudentManageModel.CourseTeach">
+              <MappingFragment StoreEntitySet="CourseTeach">
+                <ScalarProperty Name="TeaNum" ColumnName="TeaNum" />
+                <ScalarProperty Name="CrsNum" ColumnName="CrsNum" />
+                <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Classes" ColumnName="Classes" />
+                <ScalarProperty Name="SelectedCount" ColumnName="SelectedCount" />
+                <ScalarProperty Name="SelectedCountMax" ColumnName="SelectedCountMax" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Selecting" ColumnName="Selecting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manager">
+            <EntityTypeMapping TypeName="StudentManageModel.Manager">
+              <MappingFragment StoreEntitySet="Manager">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="StudentManageModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="StuNum" ColumnName="StuNum" />
+                <ScalarProperty Name="StuName" ColumnName="StuName" />
+                <ScalarProperty Name="StuGender" ColumnName="StuGender" />
+                <ScalarProperty Name="StuAge" ColumnName="StuAge" />
+                <ScalarProperty Name="StuPhoto" ColumnName="StuPhoto" />
+                <ScalarProperty Name="StuSchoolStartDate" ColumnName="StuSchoolStartDate" />
+                <ScalarProperty Name="StuPassword" ColumnName="StuPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teacher">
+            <EntityTypeMapping TypeName="StudentManageModel.Teacher">
+              <MappingFragment StoreEntitySet="Teacher">
+                <ScalarProperty Name="TeaNum" ColumnName="TeaNum" />
+                <ScalarProperty Name="TeaName" ColumnName="TeaName" />
+                <ScalarProperty Name="TeaGender" ColumnName="TeaGender" />
+                <ScalarProperty Name="TeaAge" ColumnName="TeaAge" />
+                <ScalarProperty Name="TeaPhoto" ColumnName="TeaPhoto" />
+                <ScalarProperty Name="TeaWorkYear" ColumnName="TeaWorkYear" />
+                <ScalarProperty Name="TeaPassword" ColumnName="TeaPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="StudentManageModel.Course" Width="1.5" PointX="5.75" PointY="4.75" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManageModel.CourseSelect" Width="1.5" PointX="5.25" PointY="1.125" Height="2.7341113281249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManageModel.CourseTeach" Width="1.5" PointX="3" PointY="1" Height="3.1161507161458339" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManageModel.Manager" Width="1.5" PointX="7.75" PointY="0.75" Height="1.3969734700520817" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManageModel.Student" Width="1.5" PointX="3" PointY="5.25" Height="2.5430916341145817" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManageModel.Teacher" Width="1.5" PointX="0.75" PointY="1.25" Height="2.5430916341145817" IsExpanded="true" />
+        <AssociationConnector Association="StudentManageModel.FK__CourseSel__StuNu__23BE4960" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.0967923990885406" />
+          <ConnectorPoint PointX="5.46875" PointY="7.0967923990885406" />
+          <ConnectorPoint PointX="5.46875" PointY="3.8591113281249996" />
+        </AssociationConnector>
+        <AssociationConnector Association="StudentManageModel.FK_CourseSelect_CourseTeach" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.4920556640625" />
+          <ConnectorPoint PointX="5.25" PointY="2.4920556640625" />
+        </AssociationConnector>
+        <AssociationConnector Association="StudentManageModel.FK__CourseTea__TeaNu__1FEDB87C" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.5215458170572909" />
+          <ConnectorPoint PointX="3" PointY="2.5215458170572909" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
