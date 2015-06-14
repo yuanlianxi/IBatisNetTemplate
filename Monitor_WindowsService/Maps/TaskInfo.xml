@@ -28,7 +28,7 @@
       ,#OverTimeSeconds#
       ,#CreateDateTime#
       ,#LastUpdateDateTime#
-      ,#IsActive#
+      ,1
       )
     </select>
 	</statements>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Monitor_WindowsService.AppCode;
+using ApplicationCommon;
 
 namespace Monitor_WindowsService.Tasks
 {
@@ -17,10 +18,9 @@ namespace Monitor_WindowsService.Tasks
             get { return url; }
             set { url = value; }
         }
-        public HttpLinkTask(string url,int timeout)
+        public HttpLinkTask(string url)
         {
             this.url = url;
-            this.OverTimeMilliSeconds = timeout;
         }
         public override void Execute()
         {
@@ -40,7 +40,8 @@ namespace Monitor_WindowsService.Tasks
                     }
                     else
                     {
-                        ReturnValue = taskHelper.Result;
+                        ReturnValue = Converter.ConvertTo<int>(taskHelper.Result);
+                        this.EndDateTime = taskHelper.EndDateTime;
                         break;
                     }
                 }

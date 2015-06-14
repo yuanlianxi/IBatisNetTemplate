@@ -6,3 +6,7 @@ C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNe
 C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.pdb
 C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.dll
 C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.pdb
+C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.dll
+C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.pdb
+C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.dll
+C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.pdb

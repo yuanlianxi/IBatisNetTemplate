@@ -16,10 +16,8 @@ namespace Monitor_WindowsService.AppCode
     class WebServiceTaskHelper
     {
         private volatile object result;
-
-        
         private volatile bool isRuning = true;
-
+        private DateTime endDateTime;
         public object Result
         {
             get { return result; }
@@ -30,7 +28,11 @@ namespace Monitor_WindowsService.AppCode
             get { return isRuning; }
             set { isRuning = value; }
         }
-
+        public DateTime EndDateTime
+        {
+            get { return endDateTime; }
+            set { endDateTime = value; }
+        }
         private WebServicePool webServicePool = new WebServicePool();
         private Dictionary<string, Dictionary<string, MethodInfo>> urlMethods = new Dictionary<string, Dictionary<string, MethodInfo>>();
         public void Init(IEnumerable<string> urls)
@@ -51,7 +53,7 @@ namespace Monitor_WindowsService.AppCode
             Object service = Activator.CreateInstance(type);
 
             Func<object> func = new Func<object>(()=> {return  method.Invoke(service, paras);});
-            func.BeginInvoke(o => { isRuning = false; result = func.EndInvoke(o); }, null);
+            func.BeginInvoke(o => { result = func.EndInvoke(o); isRuning = false; EndDateTime = DateTime.Now; }, null);
         }
 
         private MethodInfo GetWebServiceMethod(string url, string methodName)

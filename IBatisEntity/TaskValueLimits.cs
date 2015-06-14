@@ -12,18 +12,11 @@ namespace IBatisEntity
         private int id;
         private int taskId;
 
+        private int maxValue;
 
-        private int limitType;
-
-
-        private int valueType;
-
-
-        private string limitValues;
-
-
+        private int minValue;
+        
         private DateTime createDateTime;
-
 
         private DateTime lastUpdateDateTime;
 
@@ -32,7 +25,6 @@ namespace IBatisEntity
         #endregion
 
         #region public Properties
-
         public int Id
         {
             get { return id; }
@@ -44,20 +36,15 @@ namespace IBatisEntity
             get { return taskId; }
             set { taskId = value; }
         }
-        public int LimitType
+        public int MinValue
         {
-            get { return limitType; }
-            set { limitType = value; }
+            get { return minValue; }
+            set { minValue = value; }
         }
-        public int ValueType
+        public int MaxValue
         {
-            get { return valueType; }
-            set { valueType = value; }
-        }
-        public string LimitValues
-        {
-            get { return limitValues; }
-            set { limitValues = value; }
+            get { return maxValue; }
+            set { maxValue = value; }
         }
         public DateTime CreateDateTime
         {

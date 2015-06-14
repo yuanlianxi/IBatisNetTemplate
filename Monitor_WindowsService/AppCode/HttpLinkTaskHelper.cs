@@ -12,27 +12,37 @@ namespace Monitor_WindowsService.AppCode
         private volatile bool isRuning = true;
         private HttpWebRequest webRequest;
         public volatile object Result;
-        
+        private Exception exception;
+        private DateTime endDateTime;
 
+        
         public bool IsRuning
         {
             get { return isRuning; }
             set { isRuning = value; }
         }
-
+        public DateTime EndDateTime
+        {
+            get { return endDateTime; }
+            set { endDateTime = value; }
+        }
         public void GetString(string url, int timeout)
         {
-            
+
             webRequest = HttpWebRequest.Create(url) as HttpWebRequest;
             webRequest.Method = "GET";
             webRequest.Timeout = timeout;
             
             webRequest.BeginGetResponse((IAsyncResult o) =>
             {
-                WebResponse response = webRequest.EndGetResponse(o);
+                HttpWebResponse response = webRequest.EndGetResponse(o) as HttpWebResponse;
                 String contentType = response.ContentType;
                 Stream stream = response.GetResponseStream();
-
+                if (response.StatusCode!=HttpStatusCode.OK )
+                {
+                    exception = new Exception(response.StatusDescription);
+                    return;
+                }
                 int bufferLen = 1024 * 1024;
                 byte[] bytes = new byte[bufferLen];
                 stream.Read(bytes, 0, bufferLen);
@@ -46,6 +56,7 @@ namespace Monitor_WindowsService.AppCode
                     Result = Encoding.Default.GetString(bytes);
                 }
                 isRuning = false;
+                EndDateTime = DateTime.Now;
             }, null);
             
             

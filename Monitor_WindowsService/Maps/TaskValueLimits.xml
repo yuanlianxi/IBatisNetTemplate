@@ -6,26 +6,24 @@
   </alias>
 	<statements>
 		<select id="TaskValueLimits-Select" parameterClass="string" resultClass="TaskValueLimits">
-      SELECT * FROM Student WHERE StuNum=#StuNum#
+      SELECT * FROM TaskValueLimits WHERE StuNum=#StuNum#
     </select>
     <select id="TaskValueLimits-Insert" parameterClass="TaskValueLimits" resultClass="string">
-      INSERT  into Student (
+      INSERT  into TaskValueLimits (
       TaskId
-      ,LimitType
-      ,ValueType
-      ,LimitValues
+      ,MaxValue
+      ,MinValue
       ,CreateDateTime
       ,LastUpdateDateTime
       ,IsActive   )
       output inserted.Id
       VALUES(
       #TaskId#
-      ,#LimitType#
-      ,#ValueType#
-      ,#LimitValues#
+      ,#MaxValue#
+      ,#MinValue#
       ,#CreateDateTime#
       ,#LastUpdateDateTime#
-      ,#IsActive#
+      ,1
       )
     </select>
 	</statements>

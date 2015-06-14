@@ -16,7 +16,7 @@
       #TaskId#
       ,#WarnInfo#
       ,#CreateDateTime#
-      ,#IsActive#
+      ,1
       )
     </select>
 	</statements>

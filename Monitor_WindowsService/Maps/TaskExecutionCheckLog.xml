@@ -5,22 +5,20 @@
     <typeAlias alias="TaskExecutionCheckLog" type="IBatisEntity.TaskExecutionCheckLog, IBatisEntity" />
   </alias>
 	<statements>
-		<select id="TaskExecutionCheckLog-Select" parameterClass="string" resultClass="TaskExecutionCheckLog">
-      SELECT * FROM Student WHERE StuNum=#StuNum#
-    </select>
     <select id="TaskExecutionCheckLog-Insert" parameterClass="TaskExecutionCheckLog" resultClass="string">
-      INSERT  into Student (
+      INSERT  into TaskExecutionCheckLog (
       TaskTotalCount
       ,TaskValidCount
       ,AcquisitionDateTime
       ,IsActive
-      ,CreateDateTime  )
+      ,CreateDateTime 
+      )
       output inserted.Id
       VALUES(
       #TaskTotalCount#
       ,#TaskValidCount#
       ,#AcquisitionDateTime#
-      ,#IsActive#
+      ,1
       ,#CreateDateTime#
       )
     </select>

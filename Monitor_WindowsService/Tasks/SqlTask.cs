@@ -26,11 +26,10 @@ namespace Monitor_WindowsService.Tasks
             set { dataConn = value; }
         }
         
-        public SqlTask(string sql, string DataConn,int timeout)
+        public SqlTask(string sql, string dataConn)
         {
             this.sql = sql;
             this.dataConn = dataConn;
-            this.OverTimeMilliSeconds = timeout;
         }
         public override void Execute()
         {
@@ -45,13 +44,15 @@ namespace Monitor_WindowsService.Tasks
                 sqlHelper.ExecuteScalar(sql, OverTimeMilliSeconds, null);
                 while (!token.IsCancellationRequested)
                 {
+                    
                     if (sqlHelper.IsRuning)
                     {
                         Thread.Sleep(OverTimeMilliSeconds / 5);    
                     }
                     else
                     {
-                        ReturnValue = sqlHelper.Result;
+                        this.ReturnValue = Converter.ConvertTo<int>(sqlHelper.Result);
+                        this.EndDateTime = sqlHelper.EndDateTime;
                         break;
                     }
                 }

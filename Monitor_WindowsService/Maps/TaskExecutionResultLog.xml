@@ -6,7 +6,7 @@
   </alias>
 	<statements>
     <select id="TaskExecutionCheckLog-Insert" parameterClass="TaskExecutionCheckLog" resultClass="string">
-      INSERT  into Student (
+      INSERT  into TaskExecutionCheckLog (
       TaskId
       ,TaskExecuteStartTime
       ,TaskExecuteEndTime
@@ -36,7 +36,7 @@
       ,#ExceptionInfo#
       ,#ExceptionType#
       ,#CreateDateTime#
-      ,#IsActive#
+      ,1
       )
     </select>
 	</statements>

@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Monitor_WindowsService.AppCode;
+using ApplicationCommon;
 
 namespace Monitor_WindowsService.Tasks
 {
-    class WebServiceTask:TaskBase
+    class WebServiceTask : TaskBase
     {
         private string url;
         private string methodName;
@@ -19,19 +20,25 @@ namespace Monitor_WindowsService.Tasks
             get { return url; }
             set { url = value; }
         }
-        
+
         public string MethodName
         {
             get { return methodName; }
             set { methodName = value; }
         }
-        
+
         public object[] Paras
         {
             get { return paras; }
             set { paras = value; }
         }
-        
+
+        public WebServiceTask(string url, string methodName, object[] paras)
+        {
+            this.url = url;
+            this.methodName = methodName;
+            this.paras = paras;
+        }
         public override void Execute()
         {
             tokenSource = new CancellationTokenSource();
@@ -49,7 +56,8 @@ namespace Monitor_WindowsService.Tasks
                     }
                     else
                     {
-                        ReturnValue = taskHelper.Result;
+                        ReturnValue = Converter.ConvertTo<int>(taskHelper.Result);
+                        this.EndDateTime = taskHelper.EndDateTime;
                         break;
                     }
                 }

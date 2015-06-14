@@ -5,27 +5,20 @@
     <typeAlias alias="TaskAcquisitionLog" type="IBatisEntity.TaskAcquisitionLog, IBatisEntity" />
   </alias>
 	<statements>
-		<select id="TaskAcquisitionLog-Select" parameterClass="string" resultClass="TaskAcquisitionLog">
-      SELECT * FROM Student WHERE StuNum=#StuNum#
-    </select>
     <select id="TaskAcquisitionLog-Insert" parameterClass="TaskAcquisitionLog" resultClass="string">
-      INSERT  into Student (
-      [StuNum]
-      ,[StuName]
-      ,[StuGender]
-      ,[StuAge]
-      ,[StuPhoto]
-      ,[StuSchoolStartDate]
-      ,[StuPassword])
-      output inserted.StuNum
+      INSERT  into TaskAcquisitionLog (
+      TaskTotalCount
+      ,TaskValidCount
+      ,AcquisitionDateTime
+      ,IsActive
+      ,CreateDateTime)
+      Inserted.Id
       VALUES(
-      #StuNum#
-      ,#StuName#
-      ,#StuGender#
-      ,#StuAge#
-      ,#StuPhoto#
-      ,#StuSchoolStartDate#
-      ,#StuPassword#
+      #TaskTotalCount#
+      ,#TaskValidCount#
+      ,#AcquisitionDateTime#
+      ,#IsActive#
+      ,#CreateDateTime#
       )
     </select>
 	</statements>

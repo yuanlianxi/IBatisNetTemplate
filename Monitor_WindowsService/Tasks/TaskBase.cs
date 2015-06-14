@@ -9,10 +9,12 @@ namespace Monitor_WindowsService.Tasks
 {
     public abstract class TaskBase
     {
-        public enum TaskState{
+        public enum TaskState
+        {
             Executing
-            ,End
-            ,Exception
+            ,
+            End
+                , Exception
 
         }
         #region private Fields
@@ -23,12 +25,17 @@ namespace Monitor_WindowsService.Tasks
         private int maxValue;
         private Exception error;
 
-        private object returnValue;
+        private int returnValue;
         private DateTime startDateTime;
+        private DateTime endDateTime;
+        private int duringMilliSeconds;
+        private int tryTimes;
+
+        
         #endregion
 
         #region protected fields
-        
+
         protected Task task;
         protected CancellationTokenSource tokenSource;
         #endregion
@@ -80,25 +87,38 @@ namespace Monitor_WindowsService.Tasks
             get { return error; }
             set { error = value; }
         }
-        protected object ReturnValue
+        public  int ReturnValue
         {
             get { return returnValue; }
             set { returnValue = value; }
         }
-        protected DateTime StartDateTime
+        public  DateTime StartDateTime
         {
             get { return startDateTime; }
             set { startDateTime = value; }
         }
-
-        
+        public DateTime EndDateTime
+        {
+            get { return endDateTime; }
+            set { endDateTime = value; }
+        }
+        public int DuringMilliSeconds
+        {
+            get { return duringMilliSeconds; }
+            set { duringMilliSeconds = value; }
+        }
+        public int TryTimes
+        {
+            get { return tryTimes; }
+            set { tryTimes = value; }
+        }
         #endregion
         #region public method
         public abstract void Execute();
-        public TaskState State() {
-
+        public TaskState State()
+        {
             if (task.Status == TaskStatus.Faulted)
-            { 
+            {
                 return TaskState.Exception;
             }
             if (task.Status == TaskStatus.RanToCompletion)
@@ -108,7 +128,7 @@ namespace Monitor_WindowsService.Tasks
             return TaskState.Executing;
         }
 
-        public  void Abort()
+        public void Abort()
         {
             if (tokenSource != null)
             {
