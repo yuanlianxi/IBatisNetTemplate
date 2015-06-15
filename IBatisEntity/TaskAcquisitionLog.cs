@@ -10,15 +10,15 @@ namespace IBatisEntity
         #region private fields
         
         private int id;
-        private int taskTotalCount;
-        private int taskValidCount;
-        private DateTime acquisitionDateTime;
-        private int isActive;
-        private DateTime createDateTime;
+        private int? taskTotalCount;
+        private int? taskValidCount;
+        private DateTime? acquisitionDateTime;
+        private int? isActive;
+        private DateTime? createDateTime;
         #endregion
 
         #region public properties
-        
+
         public int Id
         {
             get
@@ -30,7 +30,7 @@ namespace IBatisEntity
                 id = value;
             }
         }
-        public int TaskTotalCount
+        public int? TaskTotalCount
         {
             get
             {
@@ -41,7 +41,7 @@ namespace IBatisEntity
                 taskTotalCount = value;
             }
         }
-        public int TaskValidCount
+        public int? TaskValidCount
         {
             get
             {
@@ -52,7 +52,7 @@ namespace IBatisEntity
                 taskValidCount = value;
             }
         }
-        public DateTime AcquisitionDateTime
+        public DateTime? AcquisitionDateTime
         {
             get
             {
@@ -63,7 +63,7 @@ namespace IBatisEntity
                 acquisitionDateTime = value;
             }
         }
-        public int IsActive
+        public int? IsActive
         {
             get
             {
@@ -74,7 +74,7 @@ namespace IBatisEntity
                 isActive = value;
             }
         }
-        public DateTime CreateDateTime
+        public DateTime? CreateDateTime
         {
             get
             {

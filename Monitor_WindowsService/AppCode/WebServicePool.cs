@@ -24,12 +24,14 @@ namespace Monitor_WindowsService.AppCode
             {
                 if (urlAssembly.ContainsKey(url))
                 {
+                    
                     return Assembly.LoadFile(urlAssembly[url]);
                 }
                 else
                 {
                     return null;
                 }
+                
             }
         }
 
@@ -37,7 +39,7 @@ namespace Monitor_WindowsService.AppCode
         {
             WebClient web = new WebClient();
             string wsdlUrl = url;
-            if (url.ToUpper().Contains("?WSDL"))
+            if (!url.ToUpper().Contains("?WSDL"))
             {
                 wsdlUrl += "?WSDL";
             }
@@ -66,7 +68,8 @@ namespace Monitor_WindowsService.AppCode
             CompilerParameters parameter = new CompilerParameters();
             parameter.GenerateExecutable = false;
             parameter.GenerateInMemory = true;
-            parameter.OutputAssembly = assemblyName + ".dll";
+            
+            parameter.OutputAssembly = assemblyName;
             parameter.ReferencedAssemblies.Add("System.dll");
             parameter.ReferencedAssemblies.Add("System.XML.dll");
             parameter.ReferencedAssemblies.Add("System.Web.Services.dll");

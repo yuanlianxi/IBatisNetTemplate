@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace ApplicationCommon
 {
@@ -17,7 +18,7 @@ namespace ApplicationCommon
             return defaultValue;
         }
 
-        public static int ConvertToDateTime(object obj, int defaultValue = default(int))
+        public static int ConvertToInt(object obj, int defaultValue = default(int))
         {
             int result;
             if (obj != null
@@ -27,18 +28,5 @@ namespace ApplicationCommon
             return defaultValue;
         }
 
-        public static T ConvertTo<T>(object obj, T defaultValue = default(T))
-        {
-            
-            if (obj == null)
-                return defaultValue;
-
-            T result = default(T);
-            object objBool = typeof(T).GetMethod("TryParse").Invoke(null, new object[]{obj.ToString(), result});
-            if (Convert.ToBoolean(objBool))
-                return result;
-
-            return defaultValue;
-        }
     }
 }

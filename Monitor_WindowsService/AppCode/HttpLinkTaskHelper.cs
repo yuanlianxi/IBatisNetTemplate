@@ -13,7 +13,7 @@ namespace Monitor_WindowsService.AppCode
         private HttpWebRequest webRequest;
         public volatile object Result;
         private Exception exception;
-        private DateTime endDateTime;
+        private  DateTime endDateTime;
 
         
         public bool IsRuning

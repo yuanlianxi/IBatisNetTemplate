@@ -8,20 +8,20 @@ namespace IBatisEntity
     public class TaskValueLimits
     {
         #region private fields
-        
+
         private int id;
-        private int taskId;
+        private int? taskId;
 
-        private int maxValue;
+        private int? maxValue;
 
-        private int minValue;
-        
-        private DateTime createDateTime;
+        private int? minValue;
 
-        private DateTime lastUpdateDateTime;
+        private DateTime? createDateTime;
+
+        private DateTime? lastUpdateDateTime;
 
 
-        private bool isActive;
+        private bool? isActive;
         #endregion
 
         #region public Properties
@@ -31,32 +31,32 @@ namespace IBatisEntity
             set { id = value; }
         }
 
-        public int TaskId
+        public int? TaskId
         {
             get { return taskId; }
             set { taskId = value; }
         }
-        public int MinValue
+        public int? MinValue
         {
             get { return minValue; }
             set { minValue = value; }
         }
-        public int MaxValue
+        public int? MaxValue
         {
             get { return maxValue; }
             set { maxValue = value; }
         }
-        public DateTime CreateDateTime
+        public DateTime? CreateDateTime
         {
             get { return createDateTime; }
             set { createDateTime = value; }
         }
-        public DateTime LastUpdateDateTime
+        public DateTime? LastUpdateDateTime
         {
             get { return lastUpdateDateTime; }
             set { lastUpdateDateTime = value; }
         }
-        public bool IsActive
+        public bool? IsActive
         {
             get { return isActive; }
             set { isActive = value; }

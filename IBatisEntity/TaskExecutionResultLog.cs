@@ -10,20 +10,23 @@ namespace IBatisEntity
         #region private fields
 
         private int id;
-        private int taskId; 
-        private DateTime taskExecuteStartTime;
-        private DateTime taskExecuteEndTime;
-        private int taskDuringMilliSeconds;
-        private int taskMaxDuringMilliSeconds;
-        private int taskReturnValueLimitMax;
-        private int taskReturnValue;
-        private int taskReturnValueLimitMin;
-        private bool isWarn;
-        private bool isExcept;
+        private int? taskId;
+        private DateTime? taskExecuteStartTime;
+        private DateTime? taskExecuteEndTime;
+        private int? taskDuringMilliSeconds;
+        private int? taskMaxDuringMilliSeconds;
+        private int? taskReturnValueLimitMax;
+        private int? taskReturnValue;
+        private int? taskReturnValueLimitMin;
+        private bool? isWarn;
+        private bool? isExcept;
         private string exceptionInfo;
         private string exceptionType;
-        private DateTime createDateTime;
-        private bool isActive;
+        private DateTime? createDateTime;
+        private bool? isActive;
+        private int? taskState;
+
+        
         #endregion
         #region public properties
 
@@ -38,7 +41,7 @@ namespace IBatisEntity
                 id = value;
             }
         }
-        public int TaskId
+        public int? TaskId
         {
             get
             {
@@ -49,7 +52,7 @@ namespace IBatisEntity
                 taskId = value;
             }
         }
-        public DateTime TaskExecuteStartTime
+        public DateTime? TaskExecuteStartTime
         {
             get
             {
@@ -60,7 +63,7 @@ namespace IBatisEntity
                 taskExecuteStartTime = value;
             }
         }
-        public DateTime TaskExecuteEndTime
+        public DateTime? TaskExecuteEndTime
         {
             get
             {
@@ -71,7 +74,7 @@ namespace IBatisEntity
                 taskExecuteEndTime = value;
             }
         }
-        public int TaskDuringMilliSeconds
+        public int? TaskDuringMilliSeconds
         {
             get
             {
@@ -82,7 +85,7 @@ namespace IBatisEntity
                 taskDuringMilliSeconds = value;
             }
         }
-        public int TaskMaxDuringMilliSeconds
+        public int? TaskMaxDuringMilliSeconds
         {
             get
             {
@@ -93,7 +96,7 @@ namespace IBatisEntity
                 taskMaxDuringMilliSeconds = value;
             }
         }
-        public int TaskReturnValueLimitMax
+        public int? TaskReturnValueLimitMax
         {
             get
             {
@@ -104,7 +107,7 @@ namespace IBatisEntity
                 taskReturnValueLimitMax = value;
             }
         }
-        public int TaskReturnValue
+        public int? TaskReturnValue
         {
             get
             {
@@ -115,7 +118,7 @@ namespace IBatisEntity
                 taskReturnValue = value;
             }
         }
-        public int TaskReturnValueLimitMin
+        public int? TaskReturnValueLimitMin
         {
             get
             {
@@ -126,7 +129,7 @@ namespace IBatisEntity
                 taskReturnValueLimitMin = value;
             }
         }
-        public bool IsWarn
+        public bool? IsWarn
         {
             get
             {
@@ -137,7 +140,7 @@ namespace IBatisEntity
                 isWarn = value;
             }
         }
-        public bool IsExcept
+        public bool? IsExcept
         {
             get
             {
@@ -170,7 +173,7 @@ namespace IBatisEntity
                 exceptionType = value;
             }
         }
-        public DateTime CreateDateTime
+        public DateTime? CreateDateTime
         {
             get
             {
@@ -181,7 +184,7 @@ namespace IBatisEntity
                 createDateTime = value;
             }
         }
-        public bool IsActive
+        public bool? IsActive
         {
             get
             {
@@ -192,6 +195,12 @@ namespace IBatisEntity
                 isActive = value;
             }
         }
+        public int? TaskState
+        {
+            get { return taskState; }
+            set { taskState = value; }
+        }
         #endregion
+
     }
 }

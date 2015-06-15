@@ -10,13 +10,13 @@ namespace IBatisEntity
         #region private fields
 
         private int id;
-        private int method;
+        private int? method;
         private string content;
         private string extend;
-        private int overTimeSeconds;
-        private DateTime createDateTime;
-        private DateTime lastUpdateDateTime;
-        private bool isActive;
+        private int? overTimeSeconds;
+        private DateTime? createDateTime;
+        private DateTime? lastUpdateDateTime;
+        private bool? isActive;
         private IList<TaskValueLimits> taskValueLimits;
 
         #endregion
@@ -28,7 +28,7 @@ namespace IBatisEntity
             set { id = value; }
         }
 
-        public int Method
+        public int? Method
         {
             get { return method; }
             set { method = value; }
@@ -45,8 +45,8 @@ namespace IBatisEntity
             get { return extend; }
             set { extend = value; }
         }
-        
-        public int OverTimeSeconds
+
+        public int? OverTimeSeconds
         {
             get
             {
@@ -57,20 +57,20 @@ namespace IBatisEntity
                 overTimeSeconds = value;
             }
         }
-        
-        public DateTime CreateDateTime
+
+        public DateTime? CreateDateTime
         {
             get { return createDateTime; }
             set { createDateTime = value; }
         }
-        
-        public DateTime LastUpdateDateTime
+
+        public DateTime? LastUpdateDateTime
         {
             get { return lastUpdateDateTime; }
             set { lastUpdateDateTime = value; }
         }
-        
-        public bool IsActive
+
+        public bool? IsActive
         {
             get { return isActive; }
             set { isActive = value; }

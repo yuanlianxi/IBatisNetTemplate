@@ -9,16 +9,16 @@ namespace IBatisEntity
     {
         #region private fields
 
-        
+
         private int id;
-        private int taskId;
+        private int? taskId;
         private string warnInfo;
-        private DateTime createDateTime;
-        private bool isActive;
+        private DateTime? createDateTime;
+        private bool? isActive;
         #endregion
 
         #region public properties
-        
+
         public int Id
         {
             get
@@ -30,7 +30,7 @@ namespace IBatisEntity
                 id = value;
             }
         }
-        public int TaskId
+        public int? TaskId
         {
             get
             {
@@ -52,7 +52,7 @@ namespace IBatisEntity
                 warnInfo = value;
             }
         }
-        public DateTime CreateDateTime
+        public DateTime? CreateDateTime
         {
             get
             {
@@ -63,7 +63,7 @@ namespace IBatisEntity
                 createDateTime = value;
             }
         }
-        public bool IsActive
+        public bool? IsActive
         {
             get
             {

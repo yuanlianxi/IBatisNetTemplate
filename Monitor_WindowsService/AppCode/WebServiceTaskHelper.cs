@@ -17,7 +17,7 @@ namespace Monitor_WindowsService.AppCode
     {
         private volatile object result;
         private volatile bool isRuning = true;
-        private DateTime endDateTime;
+        private  DateTime endDateTime;
         public object Result
         {
             get { return result; }
@@ -39,8 +39,9 @@ namespace Monitor_WindowsService.AppCode
         {
             foreach (var item in urls)
             {
-                string assemblyName = MD5Helper.GetMD5(item);
-                webServicePool.GenerateWebSeviceAssembly(item, assemblyName);
+                string assemblyName = MD5Helper.GetMD5(item) + ".dll";
+                string assemblyFullName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, assemblyName);
+                webServicePool.GenerateWebSeviceAssembly(item, assemblyFullName);
                 
             }
         }
@@ -58,11 +59,13 @@ namespace Monitor_WindowsService.AppCode
 
         private MethodInfo GetWebServiceMethod(string url, string methodName)
         {
-            Dictionary<string, MethodInfo> methods = urlMethods[url];
+
+            Dictionary<string, MethodInfo> methods = null;
             MethodInfo method = null;
             Assembly assem = null;
+
             
-            if (methods == null)
+            if(!urlMethods.ContainsKey(url))
             {
                 urlMethods[url] = new Dictionary<string, MethodInfo>();
                 methods = urlMethods[url];
@@ -70,8 +73,9 @@ namespace Monitor_WindowsService.AppCode
                 assem = webServicePool[url];
                 if (assem == null)
                 {
-                    webServicePool.GenerateWebSeviceAssembly(url, MD5Helper.GetMD5(url));
-
+                    string assemblyName = MD5Helper.GetMD5(url) + ".dll";
+                    string assemblyFullName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, assemblyName);
+                    webServicePool.GenerateWebSeviceAssembly(url, assemblyFullName);
                 }
                 assem = webServicePool[url];
                 if (assem == null)
@@ -83,11 +87,11 @@ namespace Monitor_WindowsService.AppCode
                 methods[methodName] = method;
                 return method;
             }
-
             if (methods.ContainsKey(methodName))
             {
                 return methods[methodName];
             }
+            
             
             method = GetWebServiceMethod(assem, url, methodName);
             methods[methodName] = method;
@@ -96,7 +100,7 @@ namespace Monitor_WindowsService.AppCode
 
         public MethodInfo GetWebServiceMethod(Assembly assem,string url,string methodName)
         {
-            List<Type> webServices = assem.GetTypes().Where<Type>(o => o.BaseType == typeof(WebService)).ToList();
+            List<Type> webServices = assem.GetTypes().Where<Type>(o => o.BaseType == typeof(System.Web.Services.Protocols.SoapHttpClientProtocol)).ToList();
             if (webServices == null || webServices.Count == 0)
             {
                 throw new Exception(url +"所对应的WebService中,没有找到对应实现WebService的类型");

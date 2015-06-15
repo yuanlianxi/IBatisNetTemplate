@@ -16,7 +16,7 @@ namespace IBatisDAL
 
         public IList<TaskValueLimits> SelectByTaskId(int taskId)
         {
-            IList<TaskValueLimits> ilistResult = ExecuteQueryForList<TaskValueLimits>("", taskId);
+            IList<TaskValueLimits> ilistResult = ExecuteQueryForList<TaskValueLimits>("TaskValueLimits-Select", taskId);
             return ilistResult;
         }
     }

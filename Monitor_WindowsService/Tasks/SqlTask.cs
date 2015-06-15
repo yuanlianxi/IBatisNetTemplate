@@ -36,22 +36,22 @@ namespace Monitor_WindowsService.Tasks
             tokenSource = new CancellationTokenSource();
 
             CancellationToken token = tokenSource.Token;
-            
 
+            
             task = Task.Factory.StartNew(() =>
             {
                 SqlTaskHelper sqlHelper = new SqlTaskHelper(dataConn);
                 sqlHelper.ExecuteScalar(sql, OverTimeMilliSeconds, null);
                 while (!token.IsCancellationRequested)
                 {
-                    
+                    object s = task.Status;
                     if (sqlHelper.IsRuning)
                     {
-                        Thread.Sleep(OverTimeMilliSeconds / 5);    
+                        Thread.Sleep(OverTimeMilliSeconds / 20);    
                     }
                     else
                     {
-                        this.ReturnValue = Converter.ConvertTo<int>(sqlHelper.Result);
+                        this.ReturnValue = Converter.ConvertToInt(sqlHelper.Result);
                         this.EndDateTime = sqlHelper.EndDateTime;
                         break;
                     }

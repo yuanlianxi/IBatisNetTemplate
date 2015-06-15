@@ -40,7 +40,7 @@ namespace Monitor_WindowsService.Tasks
                     }
                     else
                     {
-                        ReturnValue = Converter.ConvertTo<int>(taskHelper.Result);
+                        ReturnValue = Converter.ConvertToInt(taskHelper.Result);
                         this.EndDateTime = taskHelper.EndDateTime;
                         break;
                     }

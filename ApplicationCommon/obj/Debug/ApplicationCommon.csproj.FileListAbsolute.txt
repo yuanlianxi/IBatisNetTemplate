@@ -2,11 +2,11 @@ D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\bin\Debug\Appl
 D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.pdb
 D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.dll
 D:\develop tools\常用工具\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.pdb
-C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.dll
-C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.pdb
-C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.dll
-C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.pdb
 C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.dll
 C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.pdb
 C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.dll
 C:\Users\yuan\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.pdb
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.dll
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\bin\Debug\ApplicationCommon.pdb
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.dll
+C:\Users\yuanlx\Documents\Visual Studio 2010\Projects\IBatisNetTemplate\IBatisNetTemplate\ApplicationCommon\obj\Debug\ApplicationCommon.pdb
