@@ -5,21 +5,19 @@
     <typeAlias alias="TaskExecutionCheckLog" type="IBatisEntity.TaskExecutionCheckLog, IBatisEntity" />
   </alias>
 	<statements>
-    <select id="TaskExecutionCheckLog-Insert" parameterClass="TaskExecutionCheckLog" resultClass="string">
+    <select id="TaskExecutionCheckLog-Insert" parameterClass="TaskExecutionCheckLog" resultClass="int">
       INSERT  into TaskExecutionCheckLog (
-      TaskTotalCount
-      ,TaskValidCount
-      ,AcquisitionDateTime
+      TaskId
+      ,TaskState
+      ,CreateDateTime
       ,IsActive
-      ,CreateDateTime 
       )
       output inserted.Id
       VALUES(
-      #TaskTotalCount#
-      ,#TaskValidCount#
-      ,#AcquisitionDateTime#
-      ,1
+      #TaskId#
+      ,#TaskState#
       ,#CreateDateTime#
+      ,1
       )
     </select>
 	

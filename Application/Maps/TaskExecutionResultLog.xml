@@ -5,9 +5,10 @@
     <typeAlias alias="TaskExecutionResultLog" type="IBatisEntity.TaskExecutionResultLog, IBatisEntity" />
   </alias>
 	<statements>
-    <select id="TaskExecutionCheckLog-Insert" parameterClass="TaskExecutionCheckLog" resultClass="string">
-      INSERT  into Student (
+    <select id="TaskExecutionResultLog-Insert" parameterClass="TaskExecutionResultLog" resultClass="int">
+      INSERT  into TaskExecutionResultLog (
       TaskId
+      ,TaskState
       ,TaskExecuteStartTime
       ,TaskExecuteEndTime
       ,TaskDuringMilliSeconds
@@ -24,6 +25,7 @@
       output inserted.Id
       VALUES(
       #TaskId#
+      ,#TaskState#
       ,#TaskExecuteStartTime#
       ,#TaskExecuteEndTime#
       ,#TaskDuringMilliSeconds#
@@ -36,7 +38,7 @@
       ,#ExceptionInfo#
       ,#ExceptionType#
       ,#CreateDateTime#
-      ,#IsActive#
+      ,1
       )
     </select>
 	</statements>

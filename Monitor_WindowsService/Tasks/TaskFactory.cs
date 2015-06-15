@@ -9,14 +9,21 @@ namespace Monitor_WindowsService.Tasks
 {
     class TaskFactory
     {
+        public enum TaskType
+        {
+            SqlTask=1
+            ,WebServiceTask
+            ,HttpLinkTask
+
+        }
         public static TaskBase CreateTask(TaskInfo taskInfo)
         {
-            switch (taskInfo.Method)
+            TaskType taskType = (TaskType)taskInfo.Method;
+            switch (taskType)
             {
-                case 1:
-                    return CreateSqlTask(taskInfo);
-                case 2: return CreateWebServiceTask(taskInfo);
-                case 3: return CreateHttpLinkTask(taskInfo);
+                case TaskType.SqlTask:          return CreateSqlTask(taskInfo);
+                case TaskType.WebServiceTask:   return CreateWebServiceTask(taskInfo);
+                case TaskType.HttpLinkTask:     return CreateHttpLinkTask(taskInfo);
             }
             return null;
         }
@@ -47,9 +54,9 @@ namespace Monitor_WindowsService.Tasks
             IList<TaskValueLimits> valueLimits = ServiceContext.TaskValueLimitsService.SelectByTaskId(taskInfo.Id);
             TaskValueLimits taskValueLimits = valueLimits[0];
             task.TaskId = taskInfo.Id;
-            task.OverTimeMilliSeconds = taskInfo.OverTimeSeconds * 1000;
-            task.MaxValue = taskValueLimits.MaxValue;
-            task.MinValue = taskValueLimits.MinValue;
+            task.OverTimeMilliSeconds = (taskInfo.OverTimeSeconds ?? 5) * 1000;
+            task.MaxValue = taskValueLimits.MaxValue ?? 0;
+            task.MinValue = taskValueLimits.MinValue ?? 0;
         }
     }
 }

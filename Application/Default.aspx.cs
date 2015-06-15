@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using IBatisBLL;
 using IBatisEntity;
+using Monitor_WindowsService;
 
 namespace Application
 {
@@ -18,15 +19,10 @@ namespace Application
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Student student = new Student();
-            student.StuAge = 12;
-            student.StuName = "xiaoming";
-            student.StuNum = "110404010390";
-            student.StuPassword = "123456";
-            student.StuPhoto = "564654";
-            student.StuGender = "男";
-            student.StuSchoolStartDate = DateTime.Now;
-            StudentService.Instance.Insert(student);
+            Monitor m = new Monitor();
+            m.Execute();
+            
+           
         }
     }
 }

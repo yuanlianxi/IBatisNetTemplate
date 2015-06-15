@@ -12,7 +12,7 @@ namespace Monitor_WindowsService.AppCode
         private volatile bool isRuning = true;
         private volatile object result;
         private SqlCommand command;
-        private DateTime endDateTime;
+        private  DateTime endDateTime;
         public SqlTaskHelper(string dataConn) { this.dataConn = dataConn; }
         
         public  bool IsRuning
@@ -32,13 +32,17 @@ namespace Monitor_WindowsService.AppCode
         }
         public void ExecuteScalar(string sql, int timeout,  params SqlParameter[] paras)
         {
-            using (SqlConnection conn= new SqlConnection(dataConn))
-            {
+            SqlConnection conn = new SqlConnection(dataConn);
+            
                 command = new SqlCommand(sql, conn);
-                command.Parameters.AddRange(paras);
-                
+                if (paras != null)
+                {
+                    command.Parameters.AddRange(paras);
+                }
                 conn.Open();
                 //AsyncCallback(IAsyncResult ar)
+                command.CommandTimeout = timeout;
+                
                 command.BeginExecuteReader((IAsyncResult o) =>
                 {                    
                     SqlDataReader reader= command.EndExecuteReader(o);
@@ -46,16 +50,17 @@ namespace Monitor_WindowsService.AppCode
                     result = reader[0];
                     IsRuning = false;
                     EndDateTime = DateTime.Now;
-                },null);
-                command.CommandTimeout = timeout;
-            }
+                    reader.Close();
+                },null,System.Data.CommandBehavior.CloseConnection);
+                
+            
         }
-
         public void Cancel()
         {
             if (command != null)
             {
                 command.Cancel();
+                
             }
         }
     }

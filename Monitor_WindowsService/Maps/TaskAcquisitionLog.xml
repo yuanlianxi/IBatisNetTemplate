@@ -5,7 +5,7 @@
     <typeAlias alias="TaskAcquisitionLog" type="IBatisEntity.TaskAcquisitionLog, IBatisEntity" />
   </alias>
 	<statements>
-    <select id="TaskAcquisitionLog-Insert" parameterClass="TaskAcquisitionLog" resultClass="string">
+    <select id="TaskAcquisitionLog-Insert" parameterClass="TaskAcquisitionLog" resultClass="int">
       INSERT  into TaskAcquisitionLog (
       TaskTotalCount
       ,TaskValidCount

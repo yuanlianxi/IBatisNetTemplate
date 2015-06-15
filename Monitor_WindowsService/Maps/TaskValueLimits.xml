@@ -6,9 +6,9 @@
   </alias>
 	<statements>
 		<select id="TaskValueLimits-Select" parameterClass="string" resultClass="TaskValueLimits">
-      SELECT * FROM TaskValueLimits WHERE StuNum=#StuNum#
+      SELECT * FROM TaskValueLimits WHERE TaskId=#TaskId#
     </select>
-    <select id="TaskValueLimits-Insert" parameterClass="TaskValueLimits" resultClass="string">
+    <select id="TaskValueLimits-Insert" parameterClass="TaskValueLimits" resultClass="int">
       INSERT  into TaskValueLimits (
       TaskId
       ,MaxValue

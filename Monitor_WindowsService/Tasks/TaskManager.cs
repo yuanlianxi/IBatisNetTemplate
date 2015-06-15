@@ -12,71 +12,90 @@ namespace Monitor_WindowsService.Tasks
     {
         private IList<TaskBase> listTask = new List<TaskBase>();
 
-        private void GenerateTask()
+        private void GenerateTasks()
         {
             int count = ServiceContext.TaskInfoService.SelectTotalCount();
             IList<TaskInfo> taskInfos = ServiceContext.TaskInfoService.SelectValidTasks();
-            LogTaskAcquisition(DateTime.Now, count, taskInfos.Count);
+            Logger.LogTaskAcquisition(DateTime.Now, count, taskInfos.Count,DateTime.Now);
             foreach (var taskInfo in taskInfos)
             {
                 listTask.Add(TaskFactory.CreateTask(taskInfo));
             }
         }
-
-        public void ExecuteTasks()
+        public void Execute()
         {
+            GenerateTasks();
+            ExecuteTasks();
+        }
+
+        private void ExecuteTasks()
+        {
+
             foreach (var task in listTask)
             {
                 ExecuteTask(task);
             }
         }
-        public void ExecuteTask(TaskBase task){
-            task.Execute();
+        private void ExecuteTask(TaskBase task)
+        {
             task.StartDateTime = DateTime.Now;
+            task.Execute();
             CheckTask(task);
         }
-        public void CheckTask(TaskBase task)
+        private void CheckTask(TaskBase task)
         {
-            TimeSpan ts = DateTime.Now - task.StartDateTime;
+            DateTime now = DateTime.Now;
+            TimeSpan ts = now - task.StartDateTime;
             switch (task.State())
             {
                 case TaskBase.TaskState.Executing:
+                    Logger.LogTaskExecutionCheck(task, TaskBase.TaskState.Executing, now);
                     if (ts.TotalMilliseconds >= task.OverTimeMilliSeconds)
                     {
+                        task.EndDateTime = now;
+                        Logger.LogTaskExecutionResult(task, (int)TaskBase.TaskState.Executing, new Exception("超时"), true, now);
+                        Logger.LogTaskWarning(task, "超时", now);
+                        SendWarning(task);
                         task.Abort();
                     }
                     else
                     {
                         Thread.Sleep(task.OverTimeMilliSeconds / 10);
-                        LogTaskExecutionCheck(task, TaskBase.TaskState.Executing);
                         CheckTask(task);
                     }
                     break;
                 case TaskBase.TaskState.End:
+                    Logger.LogTaskExecutionCheck(task, TaskBase.TaskState.End, now);
                     if (ts.TotalMilliseconds > task.OverTimeMilliSeconds)
                     {
-                        LogTaskExecutionCheck(task, TaskBase.TaskState.End);
-                        LogTaskExecutionResult(task, new Exception("超时"), true);
-                        LogTaskWarning(task, "超时");
+                        Logger.LogTaskExecutionResult(task, (int)TaskBase.TaskState.End, new Exception("超时"), true, now);
+                        Logger.LogTaskWarning(task, "超时", now);
+                        SendWarning(task);
                     }
                     else
                     {
-                        LogTaskExecutionCheck(task, TaskBase.TaskState.End);
-                        LogTaskExecutionResult(task, null, false);
-                        
+                        if (task.MinValue < task.ReturnValue && task.ReturnValue < task.MaxValue)
+                        {
+                            Logger.LogTaskExecutionResult(task, (int)TaskBase.TaskState.End, null, false, now);
+                        }
+                        else
+                        {
+                            Logger.LogTaskExecutionResult(task, (int)TaskBase.TaskState.End, new Exception("超出阈值"), true, now);
+                            SendWarning(task);
+                        }
                     }
                     break;
                 case TaskBase.TaskState.Exception:
+                    task.EndDateTime = now;
+                    Logger.LogTaskExecutionCheck(task, TaskBase.TaskState.Exception, now);
+                    Logger.LogTaskExecutionResult(task, (int)TaskBase.TaskState.Exception, task.Error, true, now);
                     if (task.TryTimes >= 3)
                     {
-                        LogTaskExecutionCheck(task, TaskBase.TaskState.Exception);
-                        LogTaskExecutionResult(task, task.Error, true);
-                        LogTaskWarning(task, "超过尝试次数！");
+                        Logger.LogTaskWarning(task, "超过尝试次数！", now);
+                        SendWarning(task);
                     }
                     else
                     {
-                        LogTaskExecutionCheck(task, TaskBase.TaskState.Exception);
-                        LogTaskExecutionResult(task, task.Error, true);
                         task.TryTimes++;
                         ExecuteTask(task);
                     }
@@ -85,54 +104,7 @@ namespace Monitor_WindowsService.Tasks
 
         }
         public void SendWarning(TaskBase task) { }
-        private void LogTaskExecutionCheck(TaskBase task, TaskBase.TaskState taskState)
-        {
-            TaskExecutionCheckLog logInfo = new TaskExecutionCheckLog();
-            logInfo.TaskId = task.TaskId;
-            logInfo.TaskState = (int)taskState;
-            logInfo.CreateDateTime = DateTime.Now;
-            ServiceContext.TaskExecutionCheckLogService.Insert(logInfo);
-        }
 
-        private void LogTaskAcquisition(DateTime dt,int totalCount, int validCout)
-        {
-            TaskAcquisitionLog logInfo = new TaskAcquisitionLog();
-            logInfo.AcquisitionDateTime = dt;
-            logInfo.TaskTotalCount = totalCount;
-            logInfo.TaskValidCount = validCout;
-            ServiceContext.TaskAcquisitionLogService.Insert(logInfo);
-        }
-        private void LogTaskExecutionResult(TaskBase task,Exception exception,bool isWarn) {
-            TaskExecutionResultLog logInfo = new TaskExecutionResultLog();
-            logInfo.CreateDateTime = DateTime.Now;
-            logInfo.TaskId = task.TaskId;
-            logInfo.TaskDuringMilliSeconds = Convert.ToInt32((task.EndDateTime - task.StartDateTime).TotalMilliseconds);
-            logInfo.TaskMaxDuringMilliSeconds = task.OverTimeMilliSeconds;
-            logInfo.TaskReturnValueLimitMax = task.MaxValue;
-            logInfo.TaskReturnValueLimitMin = task.MinValue;
-            logInfo.TaskReturnValue = task.ReturnValue;
-            logInfo.TaskExecuteStartTime = task.StartDateTime;
-            
-            logInfo.TaskExecuteEndTime = task.EndDateTime;
-
-            bool isExcept = false;
-            if (exception != null)
-            {
-                isExcept = true;
-            }
-
-            logInfo.IsExcept = isExcept;
-            logInfo.ExceptionInfo = exception.StackTrace;
-            logInfo.ExceptionType = exception.GetType().FullName;
-            logInfo.IsWarn = isWarn;
-            
-        }
-        private void LogTaskWarning(TaskBase task,string warning) {
-            TaskWarningLog log = new TaskWarningLog();
-            log.TaskId = task.TaskId;
-            log.CreateDateTime = DateTime.Now;
-            log.WarnInfo = warning;
-        }
 
     }
 }

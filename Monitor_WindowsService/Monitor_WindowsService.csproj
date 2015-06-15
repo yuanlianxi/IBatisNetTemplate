@@ -16,7 +16,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -67,6 +67,7 @@
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\Logger.cs" />
     <Compile Include="Tasks\SqlTask.cs" />
     <Compile Include="Tasks\TaskBase.cs" />
     <Compile Include="Tasks\TaskFactory.cs" />
@@ -79,6 +80,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dao.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Maps\Student.xml" />
     <Content Include="Maps\TaskAcquisitionLog.xml" />
     <Content Include="Maps\TaskExecutionCheckLog.xml" />
@@ -86,11 +90,6 @@
     <Content Include="Maps\TaskInfo.xml" />
     <Content Include="Maps\TaskValueLimits.xml" />
     <Content Include="Maps\TaskWarningLog.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="dao.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="providers.config" />
   </ItemGroup>
   <ItemGroup>

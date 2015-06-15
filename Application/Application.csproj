@@ -39,6 +39,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -57,8 +58,12 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Maps\Student.xml" />
-    <Content Include="Maps\TaskValueLimits.xml" />
     <Content Include="Maps\TaskAcquisitionLog.xml" />
+    <Content Include="Maps\TaskExecutionCheckLog.xml" />
+    <Content Include="Maps\TaskExecutionResultLog.xml" />
+    <Content Include="Maps\TaskInfo.xml" />
+    <Content Include="Maps\TaskValueLimits.xml" />
+    <Content Include="Maps\TaskWarningLog.xml" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -158,20 +163,10 @@
       <Project>{22AAB7E2-DD23-4224-9CA5-8FAF052CB134}</Project>
       <Name>IBatisIBLL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Maps\TaskInfo.xml">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Maps\TaskWarningLog.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Maps\TaskExecutionResultLog.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Maps\TaskExecutionCheckLog.xml" />
+    <ProjectReference Include="..\Monitor_WindowsService\Monitor_WindowsService.csproj">
+      <Project>{B40E59D6-AA88-481A-8A12-94BD2DDD395D}</Project>
+      <Name>Monitor_WindowsService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -9,9 +9,9 @@
       SELECT * FROM TaskInfo WHERE IsActive=1
     </select>
     <select id="TaskInfo-SelectTotalCount" parameterClass="bool" resultClass="int">
-      SELECT COUNT(1) FROM TaskInfo WHERE IsActive=#IsActive#
+      SELECT COUNT(1) FROM TaskInfo
     </select>
-    <select id="TaskInfo-Insert" parameterClass="TaskInfo" resultClass="string">
+    <select id="TaskInfo-Insert" parameterClass="TaskInfo" resultClass="int">
       INSERT  into TaskInfo (
       Method
       ,Content
@@ -28,7 +28,7 @@
       ,#OverTimeSeconds#
       ,#CreateDateTime#
       ,#LastUpdateDateTime#
-      ,#IsActive#
+      ,1
       )
     </select>
 	</statements>
